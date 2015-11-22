@@ -1,0 +1,4 @@
+<h4 class="name"><%= object.name %></h4>
+<div class="name"><%= object.decription %></div>
+<div><%= image_tag object.pictures[0], width: "200", height: "auto" if object.pictures? %></div>
+<div class="link"><%= link_to 'See event', event_path(object) %></div>

@@ -1,0 +1,45 @@
+<div class="form-wrapper">
+  <%= form_for @event, html: { multipart: true } do |f| %>
+    <% if @event.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h2>
+
+        <ul>
+        <% @event.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <fieldset class="field form-group">
+      <%= f.label :pictures %><br>
+      <%= f.file_field :pictures, multiple: true, accept: "image/jpeg, image/jpg, image/gif, image/png", class: "form-control" %>
+    </fieldset>
+    <%= image_tag @event.pictures[0].url(:thumb) if @event.pictures? %>
+    <fieldset class="field form-group">
+      <%= f.label :name %><br>
+      <%= f.text_field :name, class: "form-control" %>
+    </fieldset>
+      <fieldset class="field">
+      <%= f.label :address %><br>
+      <%= f.text_field :address, class: "form-control" %>
+    </fieldset>
+    <fieldset class="field form-group">
+      <%= f.label :decription %><br>
+      <%= f.text_area :decription, class: "form-control" %>
+    </fieldset>
+    <fieldset class="field">
+      <%= f.label :latitude %><br>
+      <%= f.text_field :latitude, class: "form-control", disabled: true %>
+    </fieldset>
+    <fieldset class="field">
+      <%= f.label :longitude %><br>
+      <%= f.text_field :longitude, class: "form-control", disabled: true %>
+    </fieldset>
+    <div class="actions">
+      <%= f.submit class: "btn btn-primary" %>
+    </div>
+  <% end %>
+</div>
+

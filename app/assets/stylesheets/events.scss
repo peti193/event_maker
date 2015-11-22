@@ -1,0 +1,77 @@
+body,
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  &.event-maker {
+    background-color: #eee;
+  }
+}
+
+.main {
+  padding: 15px;
+
+  &.forgot_pass {
+    .new_user {
+      max-width: 450px;
+    }
+  }
+}
+
+#map {
+  margin-top: 15px;
+}
+
+h1.title {
+  margin: 0 0 15px 0;
+}
+
+.form-wrapper {
+  width: 500px;
+  padding: 15px;
+
+  input[type="submit"] {
+    margin: 15px 0;
+  }
+}
+
+.edit-title {
+  margin-left: 15px;
+}
+
+li {
+  list-style-type: none;
+}
+
+.title {
+  float: left;
+}
+
+.nav_btn {
+  float: right;
+}
+
+/*login*/
+
+.new_user {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+
+.field {
+  margin-bottom: 10px;
+}
+
+.checkbox.field {
+  input[type="checkbox"] {
+    margin-left: 0;
+  }
+}
+
+.new-event {
+  float: left;
+  margin-right: 10px;
+}

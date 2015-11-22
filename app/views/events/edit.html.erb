@@ -1,0 +1,12 @@
+<div class="main">
+	<h1 class="edit-title">Editing Event</h1>
+
+	<%= render 'form' %>
+	<%= link_to 'Show', @event, class: "btn" %> |
+	<%= link_to 'Back', events_path , class: "btn" %>
+</div>
+<script src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places"></script>
+<script type="text/javascript">
+	$("#event_address").geocomplete();
+</script>
+
