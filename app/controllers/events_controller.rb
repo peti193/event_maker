@@ -4,11 +4,12 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
-      @events = Event.all
+    #@events = Event.all
       if params[:search]
          @events = Event.search(params[:search]).order("created_at DESC")
       else
-        @events = Event.all.order('created_at DESC')
+        #@events = Event.all.order('created_at DESC')
+        @events = Event.paginate(:page => params[:page], :per_page => 3)
       end
     @hash = Gmaps4rails.build_markers(@events) do |event, marker|
       marker.infowindow render_to_string(:partial => "/events/info_window", :locals => { :object => event})
